@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:messager_app/util/util.dart';
 
 
@@ -53,7 +52,7 @@ class MessageApp extends StatelessWidget {
 
             SingleChildScrollView(
               child: Container(
-                color: Color.fromARGB(5, 255, 224, 178),
+                color: const Color.fromARGB(0, 255, 224, 178),
                 width: width * 0.35,
                 alignment: Alignment.topLeft,
                 child: Column(
@@ -230,9 +229,52 @@ class MessageApp extends StatelessWidget {
                         ),
                       ],
                     ),
-                    
                   ],
                 ),
+              ),
+            ),
+
+            const SizedBox(width: 5),
+
+            Container(
+              width: width * 0.5365,
+              height: height,
+              color: Colors.orange.shade50,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  profileListTile(
+                    context: context,
+                    ontap: () {},
+                    leading: const CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/riri.jpg'),
+                    ),
+                    title: 'Emily Miller',
+                    subtitle: '+1334566778',
+                    trailing: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          Icon(Icons.call),
+                          SizedBox(width: 5),
+                          Icon(Icons.video_call),
+                          SizedBox(width: 5),
+                          Icon(Icons.more_horiz_outlined),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 4.0),
+                    
+                  const Divider(
+                    indent: 10,
+                    endIndent: 10,
+                  ),
+
+                  
+                ],
               ),
             ),
           ],
@@ -240,7 +282,4 @@ class MessageApp extends StatelessWidget {
       ),
     );
   }
-}
-
-class StrokeAlignInside {
 }
